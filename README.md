@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-The app will open at `http://localhost:3000`
+The app will open at `http://localhost:5173`
 
 ## 📦 Build & Deploy
 
