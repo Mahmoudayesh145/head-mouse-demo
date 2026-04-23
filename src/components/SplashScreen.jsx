@@ -21,9 +21,6 @@ export default function SplashScreen({ onComplete }) {
     let trails = [];
     let shockwave = 0;
     
-    const charImg = new Image();
-    charImg.src = '/head-mouse-demo/character.png'; // Using the public path with base prefix
-    
     const loop = () => {
       const now = Date.now();
       const dt = now - startTm;
@@ -66,7 +63,7 @@ export default function SplashScreen({ onComplete }) {
             particles.push({
               x: cx + shakeX, y: cy - 90 + shakeY,
               vx: (Math.random() - 0.5) * 12, vy: (Math.random() - 1) * 10 - 2,
-              l: 1.5, col: Math.random() > 0.5 ? '#3b82f6' : '#f43f5e'
+              l: 1.5, col: Math.random() > 0.5 ? '#10b981' : '#f59e0b'
             });
           }
         }
@@ -123,15 +120,43 @@ export default function SplashScreen({ onComplete }) {
       C.save();
       C.translate(cx + shakeX, cy + shakeY);
       
-      if (charImg.complete) {
-        C.save();
-        C.translate(0, -40);
-        C.rotate(headAngle * 0.3); // Dampen the rotation for the 3D image
-        const imgW = 280;
-        const imgH = 280;
-        C.drawImage(charImg, -imgW / 2, -imgH / 2, imgW, imgH);
-        C.restore();
-      }
+      C.fillStyle = '#1e2233';
+      C.strokeStyle = '#3b82f6';
+      C.lineWidth = 5;
+      C.beginPath();
+      C.moveTo(-70, 150);
+      C.lineTo(-45, 0);
+      C.quadraticCurveTo(0, -35, 45, 0);
+      C.lineTo(70, 150);
+      C.fill(); C.stroke();
+      
+      C.fillStyle = '#f43f5e';
+      C.fillRect(-20, -50, 40, 50);
+      
+      C.translate(0, -40);
+      C.rotate(headAngle);
+      
+      C.fillStyle = '#2c314a';
+      C.fillRect(-45, -60, 90, 70);
+      C.strokeStyle = '#10b981';
+      C.lineWidth = 4;
+      C.strokeRect(-45, -60, 90, 70);
+      
+      C.fillStyle = dt < 3500 ? '#10b981' : '#f59e0b';
+      C.shadowColor = C.fillStyle;
+      C.shadowBlur = 20;
+      C.fillRect(-25, -45, 50, 14);
+      C.shadowBlur = 0;
+      
+      C.beginPath();
+      C.moveTo(0, -60);
+      C.lineTo(0, -85);
+      C.strokeStyle = '#94a3b8';
+      C.lineWidth = 3;
+      C.stroke();
+      C.beginPath(); C.arc(0, -85, 6, 0, Math.PI * 2); C.fillStyle = '#f43f5e'; C.fill();
+      
+      C.restore();
       
       C.restore();
       

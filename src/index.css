@@ -224,6 +224,7 @@ body {
 /* FLOATING ICONS */
 .float-icon {
   position: fixed;
+  top: 100vh;
   font-size: 2.5rem;
   color: var(--muted);
   opacity: 0.08;
@@ -232,10 +233,10 @@ body {
   animation: floatAnim linear infinite;
 }
 @keyframes floatAnim {
-  0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  0% { transform: translateY(10vh) rotate(0deg); opacity: 0; }
   10% { opacity: 0.12; }
   90% { opacity: 0.12; }
-  100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+  100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
 }
 
 /* SPLASH SCREEN */
