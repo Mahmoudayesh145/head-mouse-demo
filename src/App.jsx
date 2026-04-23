@@ -100,12 +100,12 @@ export default function App() {
       <div className="float-icon" style={{ left: '24%', animationDuration: '16s', animationDelay: '15s' }}>🌌</div>
 
       <div className="app-layout">
-        <aside className="sidebar">
+        <aside className="sidebar sidebar-left">
           <div className="hdr">
-            <h1><span style={{ color: 'var(--blue)' }}>H</span> <span style={{ color: 'var(--red)' }}>CTRL</span></h1>
-            <p>Wireless Mouse Test Suite</p>
+            <div className="logo">H <em>CTRL</em></div>
+            <p className="subtitle">Mouse Test Suite</p>
           </div>
-          <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+          <div className="sidebar-section-label">Performance</div>
           <Scoreboard globalStats={globalStats} />
         </aside>
 
@@ -117,6 +117,11 @@ export default function App() {
           {activeTab === 'copypaste' && <CopyPasteSection onScore={addScore} onPass={markPassed} />}
           {activeTab === 'game' && <GamesSection onScore={addScore} onPass={markPassed} />}
         </main>
+
+        <aside className="sidebar sidebar-right">
+          <div className="sidebar-section-label">Tests & Games</div>
+          <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+        </aside>
       </div>
     </>
   );
