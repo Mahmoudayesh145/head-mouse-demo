@@ -99,17 +99,25 @@ export default function App() {
       <div className="float-icon" style={{ left: '92%', animationDuration: '30s', animationDelay: '8s' }}>🔌</div>
       <div className="float-icon" style={{ left: '24%', animationDuration: '16s', animationDelay: '15s' }}>🌌</div>
 
-      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
-      <Scoreboard globalStats={globalStats} />
+      <div className="app-layout">
+        <aside className="sidebar">
+          <div className="hdr">
+            <h1><span style={{ color: 'var(--blue)' }}>H</span> <span style={{ color: 'var(--red)' }}>CTRL</span></h1>
+            <p>Wireless Mouse Test Suite</p>
+          </div>
+          <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+          <Scoreboard globalStats={globalStats} />
+        </aside>
 
-      <main style={{ paddingBottom: '40px' }}>
-        {activeTab === 'left' && <LeftClickSection onScore={addScore} onPass={markPassed} onHit={addHits} />}
-        {activeTab === 'right' && <RightClickSection onScore={addScore} onPass={markPassed} onHit={addHits} />}
-        {activeTab === 'scroll' && <ScrollSection onScore={addScore} onPass={markPassed} />}
-        {activeTab === 'alttab' && <AltTabSection onScore={addScore} onPass={markPassed} />}
-        {activeTab === 'copypaste' && <CopyPasteSection onScore={addScore} onPass={markPassed} />}
-        {activeTab === 'game' && <GamesSection onScore={addScore} onPass={markPassed} />}
-      </main>
+        <main className="main-content">
+          {activeTab === 'left' && <LeftClickSection onScore={addScore} onPass={markPassed} onHit={addHits} />}
+          {activeTab === 'right' && <RightClickSection onScore={addScore} onPass={markPassed} onHit={addHits} />}
+          {activeTab === 'scroll' && <ScrollSection onScore={addScore} onPass={markPassed} />}
+          {activeTab === 'alttab' && <AltTabSection onScore={addScore} onPass={markPassed} />}
+          {activeTab === 'copypaste' && <CopyPasteSection onScore={addScore} onPass={markPassed} />}
+          {activeTab === 'game' && <GamesSection onScore={addScore} onPass={markPassed} />}
+        </main>
+      </div>
     </>
   );
 }
