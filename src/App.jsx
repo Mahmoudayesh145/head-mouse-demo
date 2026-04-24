@@ -7,6 +7,7 @@ import ScrollSection from './components/ScrollSection.jsx';
 import AltTabSection from './components/AltTabSection.jsx';
 import CopyPasteSection from './components/CopyPasteSection.jsx';
 import GamesSection from './components/GamesSection.jsx';
+import TypingSection from './components/TypingSection.jsx';
 import SplashScreen from './components/SplashScreen.jsx';
 
 export default function App() {
@@ -16,7 +17,7 @@ export default function App() {
   const [globalStats, setGlobalStats] = useState({
     totalScore: 0,
     passedTests: [],
-    totalTests: 12, // 3 for left, 3 for right, 3 for scroll, 3 for copypaste
+    totalTests: 16, // 3 for left, 3 for right, 3 for scroll, 3 for copypaste, 3 for games, 1 for typing
     totalHits: 0,
     totalClicks: 0
   });
@@ -116,6 +117,7 @@ export default function App() {
           {activeTab === 'alttab' && <AltTabSection onScore={addScore} onPass={markPassed} />}
           {activeTab === 'copypaste' && <CopyPasteSection onScore={addScore} onPass={markPassed} />}
           {activeTab === 'game' && <GamesSection onScore={addScore} onPass={markPassed} />}
+          {activeTab === 'typing' && <TypingSection onScore={addScore} onPass={markPassed} />}
         </main>
 
         <aside className="sidebar sidebar-right">

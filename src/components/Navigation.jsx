@@ -6,6 +6,7 @@ export default function Navigation({ activeTab, setActiveTab }) {
     { id: 'right', label: '🖱 Right Click', color: 'rose', dataS: 'left' },
     { id: 'scroll', label: '⬆ Scroll', color: 'green', dataS: 'scroll' },
     { id: 'copypaste', label: '📋 Copy+Paste', color: 'cyan', dataS: 'copypaste' },
+    { id: 'typing', label: '⌨ Typing', color: 'amber', dataS: 'typing' },
     { id: 'game', label: '🎮 Games', color: 'purple', dataS: 'game' }
   ];
 

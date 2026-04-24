@@ -78,6 +78,7 @@ export default function GamesSection({ onScore, onPass }) {
       clearInterval(eng.gTmI);
       if(eng.dodgI) clearInterval(eng.dodgI);
       onScore(Math.floor(eng.gSc / 10));
+      onPass('game_' + curG);
       toast('Game Over! Score: ' + eng.gSc, 'e');
       setGamesPlayed(p => {
         const next = p + 1;
