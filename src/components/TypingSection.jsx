@@ -4,7 +4,7 @@ import { toast, sparks } from '../utils';
 export default function TypingSection({ onScore, onPass }) {
   const [tState, setTState] = useState('idle'); // idle, act, pass
   const [input, setInput] = useState('');
-  const TARGET_TEXT = 'HEAD MOUSE';
+  const TARGET_TEXT = 'MOUSE';
 
   const KEYBOARD_ROWS = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
