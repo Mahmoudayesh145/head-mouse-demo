@@ -17,7 +17,7 @@ export default function App() {
   const [globalStats, setGlobalStats] = useState({
     totalScore: 0,
     passedTests: [],
-    totalTests: 16, // 3 for left, 3 for right, 3 for scroll, 3 for copypaste, 3 for games, 1 for typing
+    totalTests: 13, // 3 for left, 3 for right, 3 for scroll, 3 for copypaste, 1 for typing
     totalHits: 0,
     totalClicks: 0
   });
